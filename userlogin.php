@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport"content="width=device-width,initial-scale=1">
+		<title>G&G Database</title>
+
+		<!--Bootstrap-->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="csslogin.css">
+	</head>
+	<body>
+		<nav class="navbar navbar-default navbar-static-top">
+		<div class="container">
+			<div clas="navbar-header">
+				<a class="navbar-brand" href="#">
+				<img alt="Brand" src=" ongc_logo.png" style="height:80px;">
+				</a>
+				</nav>
+			 </div>
+			</div>
+			</div>
+		<div class="row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4 white-box text-center"> </div>
+			</div>
+
+			<h1 style="text-align:center;">User Login</h1>
+			<form>
+			<div class="userpass">
+			<div class="form-group">
+			<label for="label label-primary">User Id:</label>
+			<input type="email" name="id" class="form-control" required><br><br>
+			</div>
+			<div class="form-group">
+						<label for="label label-primary">Password:</label>
+						<input type="password" name="pass" 
+ 					class="form-control"/><br><br>
+						</div>
+						<input type="submit" class="btn btn-success" value="Login"/>
+						<input type="reset" class="btn btn-danger" value="Reset"/>
+					</div>
+						</form>
+			</div>
+
+			<!--Add a digital clock-->
+
+<script type="text/javascript">
+tday=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+tmonth=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+
+function GetClock(){
+var d=new Date();
+var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getFullYear();
+var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
+
+if(nhour==0){ap=" AM";nhour=12;}
+else if(nhour<12){ap=" AM";}
+else if(nhour==12){ap=" PM";}
+else if(nhour>12){ap=" PM";nhour-=12;}
+
+if(nmin<=9) nmin="0"+nmin;
+if(nsec<=9) nsec="0"+nsec;
+
+document.getElementById('clockbox').innerHTML=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
+}
+
+window.onload=function(){
+GetClock();
+setInterval(GetClock,1000);
+}
+</script>
+<div id="clockbox" style="text-align:center;"></div>
+
+
+	</body>
+	</html> 
+	<!--Add php-->
+<?php
+ include "connect.php";
+ if(ISSET($_POST['login'])){
+	 $email= $_POST['email'];
+	 $password=$_POST['password'];
+	 $cek=mysql_num_rows(mysql_query("SELECT *FROM userlogin WHERE email='$email' AND password='$password'"));
+	 $data=mysql_fetch_array(mysql_query("SELECT *FROM userlogin WHERE email='$email' AND password='$password'"));
+	 if($cek > 0)
+	 {
+		 session_start();
+		 $_SESSION['email']=$data['email'];
+		 $_SESSION['name']=$data['full_name'];
+		 echo"<script language=\"javascript\">alert(\"Welcome\");document.location.href="userselectionpage.php";</script>";
+		}
+		else{
+			echo "<script language=\"javascript\">alert(\"Invalid username or password\");document.location.href="userlogin.php";</script>"
+		}
+	}
+	?>
+		}
+			

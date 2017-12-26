@@ -1,0 +1,116 @@
+<?php
+session_start();
+IF(ISSET($_SESSION['name'])){
+?>z
+
+
+<!DOCTYPE html>
+		<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport"content="width=device-width,initial-scale=1">
+	<!--Bootstrap-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+		 <link rel="stylesheet" href="userselectioncss.css">
+		 <title>User Selection</title>
+	</head>
+<body>	
+
+	 <!-- <div class="container">
+	<form>
+		<div class="row">
+		<div class="col-sm-3">
+	 -->		 <div class="input-group dropdown">
+				<input type="text" class="form-control dropdown-toggle" value="Software">
+				<ul class="dropdown-menu">
+					<li><a href="#"><input type="radio">Petrol</a></li>
+					<li><a href="#"><input type="radio">Landmark</a></li>
+					<li><a href="#"><input type="radio">Geology</a></li>
+					<li><a href="#"><input type="radio">Kingdom</a></li>
+				</ul>
+					<span role="button" class="input-group-addon dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></span>
+			</div>
+		</div>
+</div>
+</form>
+</div>
+	 
+		 <form>
+			<div class="container">
+			<form>
+				<div class="row">
+		 		<div class="col-sm-3">	
+		 		<div class="input-group dropdown">
+				<input type="text" class="form-control dropdown-toggle" value="Block">
+				<ul class="dropdown-menu">
+					<li><a href="#"><input type="radio">Ganga</a></li>
+					<li><a href="#"><input type="radio">HF</a></li>
+					<li><a href="#"><input type="radio">Rajasthan</a></li>
+					<li><a href="#"><input type="radio">Satpura</a></li>
+					<li><a href="#"><input type="radio">South-Rewa</a></li>
+					<li><a href="#"><input type="radio">Vindhyan</a></li>
+					<li><a href="#"><input type="radio">Vindhyan-Chambal</a></li>
+					<li><a href="#"><input type="radio">Vindhyan-Son</a></li>
+				</ul>
+					<span role="button" class="input-group-addon dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></span>
+
+
+				</div>
+				</div>
+				</form>
+</div>
+				<form>
+					<div class="container">
+				<div class="row">
+		 		<div class="col-sm-3">	
+		 		<div class="input-group dropdown">
+					<input type="text" class="form-control dropdown-toggle" value="Volume">
+					<select>
+					<select
+             class="form-control" name="size">
+                <option value="a">2D</option>
+                <option value="s">3D</option>
+                </select>
+					<!-- <ul class="dropdown-menu">
+					 -->	
+						<!-- <li><a href="#"><input type="radio">2D</a></li>
+						<li><a href="#"><input type="radio">3D</a></li>
+						</ul>
+						 --><span role="button" class="input-group-addon dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></span>
+				</div>
+				</div>
+				</div>
+				</form>
+				<form>
+					<div class="container">
+				<div class="row">
+		 		<div class="col-sm-3">	
+		 		<div class="input-group dropdown">
+					<input type="text" class="form-control dropdown-toggle" value="Data Format">
+					<ul class="dropdown-menu">
+					<li><a href="#"><input type="radio">Data Sheet</a></li>
+					<li><a href="#"><input type="radio">Geometry</a></li>
+					<li><a href="#"><input type="radio">Processed</a></li>
+					<li><a href="#"><input type="radio">Gathers</a></li>
+					<li><a href="#"><input type="radio">Raw</a></li>
+					<li><a href="#"><input type="radio">SPS</a></li>
+					<li><a href="#"><input type="radio">Velocity</a></li>
+					</ul>
+					<span role="button" class="input-group-addon
+					 dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></span>
+				</div>
+				</div>
+				</div>
+			
+ 	</form> 
+	</body>
+</html>
+<?php
+}
+else{
+echo"<script language=\"javascript\">alert(\"Please login\").document.location.href='userlogin.php';</script>
+}
+?> 
