@@ -199,6 +199,38 @@
       </label>  
       </div>
       </div>
-     
+      <div class="wrap">
+      <div class="right">
+    
+                <div class="select-editable">
+                <select onchange="this.nextElementSibling.value=this.value">
+        <option value=""></option>
+         </select>
+        <input type="text" name="format" value=""placeholder="Well Name"/><br>
+     <div class="select-editable">
+      <select onchange="this.nextElementSibling.value=this.value">
+      <option value=""></option>
+      <option value="VSP">VSP</option>
+      <option value="Well-log">Well-log</option>
+      </select>
+       <input type="text" name="format" value="" placeholder="Data Category">
+       </div>
+        <div class="select-editable">
+    <select onchange="this.nextElementSibling.value=this.value">
+  <option value=""></option>
+  <option value="LAS">LAS</option>
+  <option value="PDF">PDF</option>
+  </select>
+  <input type="text" name="format" value="" placeholder="Data Format"/></div>
+  <div class="select-editable">
+    <select onchange="this.nextElementSibling.value=this.value">
+        <option value=""></option>
+      <option value="Composite-Log">Composite-Log</option>
+      <option value="Merged-Log">Merged-Log</option>
+      <option value="Original">Original</option>
+      <option value="Raw">Raw</option>
+    </select>
+    <input type="text" name="format" value=""placeholder="Data Type" />
+    </div> 
 	</body>
 	</html>

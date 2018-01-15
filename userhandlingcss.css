@@ -145,7 +145,7 @@ body {
 
 .container {
     display: block;
-    position: relative;
+    position:relative;
     padding-left: 35px;
     margin-bottom: 12px;
     cursor: pointer;
