@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+	<head>
+	<script type="text/javascript" src="select2.js"></script>
+	<link href="css/bootstrap.min.css" rel="stylesheet"> 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="D:\ONGC\select2-bootstrap-theme-master\dist"></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+	<script type="text/javascript">
+      $(".myselect").select2();
+</script>
+<style>
+.seismic{
+	border:5px solid red;
+}
+.well{
+
+	
+	border-right:2px solid black;
+	margin-right:-3px;
+}
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: 5px;
+    top: 4.5px;
+    width: 5px;
+    height: 5px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(50deg);
+    -ms-transform: rotate(50deg);
+    transform: rotate(45deg);
+}
+
+body{
+		background:url('user.png');
+		background-size:cover;
+		opacity:-6px;
+}
+ .select-editable {
+     position:relative;
+     background-color:white;
+     border:solid grey 1px;
+     width:120px;
+     height:18px;
+ }
+ .select-editable select {
+     position:absolute;
+     top:0px;
+     left:0px;
+     font-size:14px;
+     border:none;
+     width:120px;
+     margin:0;
+ }
+ .select-editable input {
+     position:absolute;
+     top:0px;
+     left:0px;
+     width:100px;
+     padding:1px;
+     font-size:12px;
+     border:none;
+ }
+ .select-editable select:focus, .select-editable input:focus {
+     outline:none;
+ }
+ .select-editable1 {
+
+     position:relative;
+     background-color:white;
+     border:solid grey 1px;
+     width:120px;
+     height:18px;
+ }
+ .select-editable1 select {
+     position:absolute;
+     top:0px;
+     left:0px;
+     font-size:14px;
+     border:none;
+     width:120px;
+     margin:0;
+ }
+ .select-editable1 input {
+     position:absolute;
+     top:0px;
+     left:0px;
+     width:100px;
+     padding:1px;
+     font-size:12px;
+     border:none;
+ }
+ .select-editable1 select:focus, .select-editable1 input:focus {/*
+     outline:none;*/
+ }
+ 
+ </style>
+
+ </head>
+ <figure>
+ <body>
+
+ <script>
+ $(document).ready(function() {
+    $('.js-example-basic-single').select2();
+});
+</script>
+Software:
+<div class="seismic">
+<div class="select-editable">
+    <select onchange="this.nextElementSibling.value=this.value">
+        <option value=""></option>
+        <option value="Petrol">Petrol</option>
+        <option value="Landmark">Landmark</option>
+        <option value="Geology">Geology</option>
+        <option value="Kingdom">Kingdom</option>
+    </select>
+    <input type="text" name="format" value="" />
+Block:
+<div class="select-editable">
+    <select onchange="this.nextElementSibling.value=this.value">
+        <option value=""></option>
+        <option value="Ganga">Ganga</option>
+        <option value="HF">HF</option>
+        <option value="Rajasthan">Rajasthan</option>
+        <option value="Satpura">Satpura</option>
+        <option value="South-Rewa">South-Rewa</option>
+        <option value="Vindhyan">Vindhyan</option>
+        <option value="Vindhyan-Chambal">Vindhyan-Chambal</option>
+        <option value="Vindhyan-Son">Vindhyan-Son</option>
+    </select>
+    <input type="text" name="format" value="" />
+</div>
+<label class="container">Area
+  <input type="checkbox" checked="checked">
+  <span class="checkmark"></span>
+</label>
+</tr>
+Volume:
+<div class="select-editable">
+    <select onchange="this.nextElementSibling.value=this.value">
+        <option value=""></option>
+ 		<option value="2D">2D</option>
+ 		<option value="3D">3D</option>
+ 	</select>
+ 		<input type="text" name="format" value=""/>
+ </div>
+ Data Format:
+ 
+ <div class="select-editable">
+    <select onchange="this.nextElementSibling.value=this.value">
+        <option value=""></option>
+ 		<option value="SEGY">SEGY</option>
+ 		<option value="PDF">PDF</option>
+ 		<option value="ASCII">ASCII</option>
+ 		<option value="DAT">DAT</option>
+ 		<option value="DOC">DOC</option>
+ 		<option value="ESSO">ESSO</option>
+ 		<option value="SPS">SPS</option>
+ 		<option value="SEGD">SEGD</option>
+ 		<option value="TEXT">TEXT</option>
+ 		<option value="TIF">TIF</option>
+ 		<option value="TIFF">TIFF</option>
+ 		<option value="TIFF,PDF">TIFF,PDF</option>
+ 		<option value="VEL">VEL</option>
+ 		<option value="WORD">WORD</option>
+ 		<option value="WORD,XLS">WORD,XLS</option>
+ 		</select>
+ 		<input type="text" name="format" value="" />
+
+ 		</div>
+Data Category Set:
+<div class="select-editable">
+    <select onchange="this.nextElementSibling.value=this.value">
+        <option value=""></option>
+        <option value="Data Sheet">Data Sheet</option>
+        <option value="Geometry">Geometry</option>
+        <option value="Processed">Processed</option>
+        <option value="Gathers">Gathers</option>
+        <option value="Raw">Raw</option>
+        <option value="SPS">SPS</option>
+        <option value="Velocity">Velocity</option>
+        </select>
+        <input type="text" name="format" value="" />
+        </div>
+<br/>
+</datalist>
+<label class="container">SIG
+  <input type="checkbox" checked="checked">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Line/Swath
+  <input type="checkbox" checked="checked">
+  <span class="checkmark"></span>
+</label>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+	<div class="col-sm-6">
+<div class="well">
+<tr>
+<div class="select-editable">
+    <select onchange="this.nextElementSibling.value=this.value">
+        <option value=""></option>
+        <option value="Ganga">Ganga</option>
+        <option value="HF">HF</option>
+        <option value="Rajasthan">Rajasthan</option>
+        <option value="Satpura">Satpura</option>
+        <option value="South-Rewa">South-Rewa</option>
+        <option value="Vindhyan">Vindhyan</option>
+        <option value="Vindhyan-Chambal">Vindhyan-Chambal</option>
+        <option value="Vindhyan-Son">Vindhyan-Son</option>
+    </select>
+    <input type="text" name="format" value="" />
+</div>
+</tr>
+
+Well Name:
+	<div class="select-editable1">
+    <select onchange="this.nextElementSibling.value=this.value">
+        <option value=""></option>
+        </select>
+        <input type="text" name="format" value=""/>
+      </div>
+Data Category:
+	<div class="select-editable1">
+    <select onchange="this.nextElementSibling.value=this.value">
+    	<option value=""></option>
+    	<option value="VSP">VSP</option>
+    	<option value="Well-log">Well-log</option>
+    	</select>
+    	<input type="text" name="format" value="" />
+
+    </div>
+Data-Type:
+<div class="select-editable1">
+    <select onchange="this.nextElementSibling.value=this.value">
+        <option value=""></option>
+    	<option value="Composite-Log">Composite-Log</option>
+    	<option value="Merged-Log">Merged-Log</option>
+    	<option value="Original">Original</option>
+    	<option value="Raw">Raw</option>
+    </select>
+    <input type="text" name="format" value="" />
+
+    </div>
+Data-Format:
+<div class="select-editable1">
+	<select onchange="this.nextElementSibling.value=this.value">
+	<option value=""></option>
+	<option value="LAS">LAS</option>
+	<option value="PDF">PDF</option>
+	</select>
+	<input type="text" name="format" value="" />
+
+</div>
+</div>
+</div>
+<div class="container">
+	<div class="col-sm-*">
+<b>G&G Report</b><br>
+Block:
+<div class="select-editable1">
+	<select onchange="this.nextElementSibling.value=this.value">
+	 <option value=""></option>
+	 <option value="Block"></option>
+	 <option value="Ganga">Ganga</option>
+        <option value="HF">HF</option>
+        <option value="Rajasthan">Rajasthan</option>
+        <option value="Satpura">Satpura</option>
+        <option value="South-Rewa">South-Rewa</option>
+        <option value="Vindhyan">Vindhyan</option>
+        <option value="Vindhyan-Chambal">Vindhyan-Chambal</option>
+        <option value="Vindhyan-Son">Vindhyan-Son</option>
+    </select>
+    <input type="text" name="format" value=" " />
+</div>
+
+	 <option value=""></option>	 
+Report Type:
+	 <div class="select-editable1">
+	<select onchange="this.nextElementSibling.value=this.value">
+	<option value=""></option>
+	</select>
+	<input type="text" name="format" value="" />
+
+	</div>
+SIG/Well:
+	<div class="select-editable1">
+	<select onchange="this.nextElementSibling.value=this.value">
+	 <option value=" "></option>
+	 </select>
+	 <input type="text" name="format" value="" />
+	 </div>
+	 </div>
+	 </div>
+	 <div class=">
+	 <div class="right">
+                <div class="select-editable">
+                <select onchange="this.nextElementSibling.value=this.value">
+        <option value=""></option>
+       
+	 </body>
+	
