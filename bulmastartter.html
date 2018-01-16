@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Selection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <link rel="stylesheet" href="bulmastarter.css">
+  </head>
+  <body>
+  <script src="bulmastarterjs.js"></script>
+  <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+     <a class="navbar-item">
+      <img src="ongc_logo.png"height="80px;"width="40px;">
+    </a>
+    <a class="navbar-item">
+  Home
+</a>
+<a class="navbar-item">
+  Seismic Data
+</a>
+<a class="navbar-item">
+  Well Data
+</a>
+<a class="navbar-item">
+  G&G Report
+</a>
+<!--Search Bar-->
+
+<div id="container">
+  <div id="searchbar">
+    <input type="text" id="topics" style="float:left"/><input type="hidden" id="topicID" />
+    <div id="btn" onclick="checkWeb()" style="float:left">Get Started</div>
+  </div>
+</div>
+    <button class="button navbar-burger">
+      <span></span>
+      <span></span>
+       <span></span>
+    </button>
+  </div>
+</nav>
+<div class="card" style="width: 20rem ;">
+<div class="card-body" style="background-color:#f2f2c1;">
+    <h3 class="card-title">Seismic Data</h3>
+    <p class="card-text">
+  <div class="wrap">
+  <div class="left">
+  <div class="select-editable">
+  <select onchange="this.nextElementSibling.value=this.value">  
+                    <option value=""></option>
+                    <option value="Petrol">Petrol</option>
+                    <option value="Landmark">Landmark</option>
+                    <option value="Geology">Geology</option>
+                    <option value="Kingdom">Kingdom</option>
+                </select>
+                    <input type="text" name="format" value="" placeholder="Software"/>
+                </div>
+                </div>
+      </div>
+      </div>
+      </p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+<div class="card" style="width: 20rem;">
+<div class="card-body">
+    <h5 class="card-title">Well Data</h5>
+    <p class="card-text">
