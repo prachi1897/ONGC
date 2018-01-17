@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Selection</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
     <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
     <link rel="stylesheet" href="bulmastarter.css">
   </head>
@@ -20,7 +22,7 @@
     <a class="navbar-item">
   Home
 </a>
-<a class="navbar-item">
+<a class="navbar-item" id="se">
   Seismic Data
 </a>
 <a class="navbar-item">
@@ -29,8 +31,6 @@
 <a class="navbar-item">
   G&G Report
 </a>
-<!--Search Bar-->
-
     <button class="button navbar-burger">
       <span></span>
       <span></span>
@@ -38,31 +38,25 @@
     </button>
   </div>
 </nav>
+<div id="seis">
 <div class="card" style="width:20rem;">
 <div class="card-body" style="background-color:#f2f2c1;">
     <h3 class="card-title">Seismic Data</h3>
     <p class="card-text"></p>
-    <div class="columns">
-      <div class="column">
-    <div class="wrap">
-                
-
-                <div class="select-editable">
-                <select onchange="this.nextElementSibling.value=this.value">  
+      <div class="wrap">
+                 <div class="select-editable">
+                  <select onchange="this.nextElementSibling.value=this.value">  
                     <option value=""></option>
                     <option value="Petrol">Petrol</option>
                     <option value="Landmark">Landmark</option>
                     <option value="Geology">Geology</option>
                     <option value="Kingdom">Kingdom</option>
-                </select>
+                  </select>
                     <input type="text" name="format" value="" placeholder="Software"/>
-                </div>
+                  </div>
                 </div>
                 <div class="wrap">
-            
-                <div class="left">
-                
-    <div class="select-editable">
+                <div class="select-editable">
                 <select onchange="this.nextElementSibling.value=this.value">  
                 <option value=""></option>
         <option value="Ganga">Ganga</option>
@@ -73,12 +67,10 @@
         <option value="Vindhyan">Vindhyan</option>
         <option value="Vindhyan-Chambal">Vindhyan-Chambal</option>
         <option value="Vindhyan-Son">Vindhyan-Son</option>
-   
                 </select>
                     <input type="text" name="format" value="" placeholder="Block" />
                 </div>
                 </div>
-
 <div class="wrap">
   <div class="left">
 <div class="select-editable">
@@ -93,7 +85,6 @@
   <input type="checkbox" checked="checked">
   <span class="checkmark"></span>
 </label>
-
     </div>
     </div>
     <div class="select-editable">
@@ -129,8 +120,7 @@
         <option value="Velocity">Velocity</option>
         </select>
         <input type="text" name="format" value=""placeholder="Data Category Set"/>
-        </div>
-      
+        </div>  
       <label class="container">SIG
       <input type="checkbox" checked="checked">
       <span class="checkmark"></span>
@@ -139,13 +129,21 @@
       <input type="checkbox" checked="checked">
       <span class="checkmark"></span>
       </label>
-      <div class="control">
-  <button class="button is-primary">Submit</button>
-</div>
-  </div>
-      </div>
-      </div>
-      <div class="column">
+    <div class="control">
+    <button class="button is-primary">Submit</button>
+    </div>
+    </div>
+    </div>
+    <script>
+      $(function(){
+        $('#se').click(function(){
+          $('#seis').show();
+          return false;
+        });
+      });
+        </script>
+    </div>
+  <!-- 
 <div class="card" style="width:20rem;">
 <div class="card-body" style="background-color:#c12c1c1;">
     <h3 class="card-title">Well Data</h3>
@@ -220,7 +218,7 @@
 </div>
  
 <div class="card" style="width:20rem;">
-<div class="card-body" style="background-color:#f2f2c1;">
+<div class="card-body" style="background-color:#c3f2f1;">
     <h3 class="card-title">G&G Report</h3>
     <p class="card-text"></p>
 <div class="select-editable">
@@ -237,5 +235,6 @@
 </div>
       <div class="control">
   <button class="button is-primary">Submit</button>
-</div>
-
+</div> -->
+</body>
+</html>
