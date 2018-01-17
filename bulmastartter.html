@@ -8,7 +8,6 @@
     <title>Selection</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-
     <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
     <link rel="stylesheet" href="bulmastarter.css">
   </head>
@@ -22,7 +21,7 @@
     <a class="navbar-item">
   Home
 </a>
-<a class="navbar-item" id="se">
+<a class="navbar-item" id="se" onclick="toggle()">
   Seismic Data
 </a>
 <a class="navbar-item">
@@ -135,21 +134,26 @@
     </div>
     </div>
     <script>
-      $(function(){
-        $('#se').click(function(){
-          $('#seis').show();
-          return false;
-        });
-      });
+    function toggle(){
+      var x=document.getElementById("seis");
+              if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+
         </script>
     </div>
-  <!-- 
+  <!--------------WELL DATA------------>
+  
+<div id="well"> 
 <div class="card" style="width:20rem;">
 <div class="card-body" style="background-color:#c12c1c1;">
     <h3 class="card-title">Well Data</h3>
     <p class="card-text"></p>
-     <div class="wrap">
-               
+     <div class="wrap">       
                 <div class="select-editable">
                 <select onchange="this.nextElementSibling.value=this.value">
         <option value=""></option>
@@ -160,7 +164,7 @@
     </select>
     <input type="text" name="format" value="" placeholder="Software" />
     </div>
-    </div>
+  
                 <div class="select-editable">
                 <select onchange="this.nextElementSibling.value=this.value">  
                 <option value=""></option>
@@ -172,17 +176,15 @@
         <option value="Vindhyan">Vindhyan</option>
         <option value="Vindhyan-Chambal">Vindhyan-Chambal</option>
         <option value="Vindhyan-Son">Vindhyan-Son</option>
-   
                 </select>
                     <input type="text" name="format" value="" placeholder="Block" />
                 </div>
-                </div>
+
           <div class="select-editable">
                 <select onchange="this.nextElementSibling.value=this.value">
         <option value=""></option>
          </select>
         <input type="text" name="format" value=""placeholder="Well Name"/><br>
-    
       <div class="select-editable">
       <select onchange="this.nextElementSibling.value=this.value">
       <option value=""></option>
@@ -214,10 +216,11 @@
 
 </div>
 </div>
-
 </div>
- 
-<div class="card" style="width:20rem;">
+                    <!--G&G REPORT-->
+
+
+<!-- <div class="card" style="width:20rem;">
 <div class="card-body" style="background-color:#c3f2f1;">
     <h3 class="card-title">G&G Report</h3>
     <p class="card-text"></p>
@@ -236,5 +239,5 @@
       <div class="control">
   <button class="button is-primary">Submit</button>
 </div> -->
-</body>
+ --></body>
 </html>
