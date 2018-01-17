@@ -10,13 +10,13 @@
 
 html {
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 100%;
+  font-size: 20%;
   background: #333;
   -webkit-font-smoothing: antialiased;
 }
 
 #page-wrapper {
-  width: 640px;
+  width: 620px;
   background: #FFFFFF;
   padding: 1em;
   margin: 1em auto;
@@ -24,9 +24,6 @@ html {
   box-shadow: 0 2px 10px rgba(0,0,0,0.8);
 }
 
-h1 {
-  margin-top: 0;
-}
 
 label {
   display: block;
@@ -36,10 +33,10 @@ label {
 }
 
 input {
-  width: 100%;
+  width: 12%;
   padding: 0.5em 0.5em;
   font-size: 1.2em;
-  border-radius: 3px;
+  border-radius: 1px;
   border: 1px solid #D9D9D9;
 }
 
@@ -55,7 +52,7 @@ button {
   -webkit-font-smoothing: antialiased;
   font-weight: bold;
   margin: 0;
-  width: 100%;
+  width: 25%;
   text-align: center;
 }
 
@@ -113,15 +110,27 @@ request.open('GET', 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/4621/html-elem
 request.send();
 </script>
 
-  <input type="text" id="default" list="languages" placeholder="Software">
+  <input type="text" id="default" list="languages" placeholder="datalist">
   
-  <datalist id="languages">
+  <datalist id="software">
     <option value="Petrol">
     <option value="Landmark">
     <option value="Geology">
     <option value="Kingdom">
      </datalist>
+     <input type="text" id="default" list="languages" placeholder="Software">
+<input type="text" id="default" list="languages" placeholder="Software">
   
+  <datalist id="Block">
+  <option value="Ganga">
+  <option value="HF">
+  <option value="Rajasthan">
+  <option value="Satpura">
+  <option value="South-Rewa">
+  <option value="Vindhyan">
+  <option value="Vindhyan-Chambal">
+  <option value="Vindhyan-Son">
+  </datalist>
   
  <!--  <label for="ajax">Pick an HTML Element (options loaded using AJAX)</label>
   <input type="text" id="ajax" list="json-datalist" placeholder="e.g. datalist">
