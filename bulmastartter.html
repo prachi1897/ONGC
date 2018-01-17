@@ -22,7 +22,7 @@
     <a class="navbar-item">
   Home
 </a>
-<a class="navbar-item" id="se">
+<a class="navbar-item" id="se" onclick="toggle()">
   Seismic Data
 </a>
 <a class="navbar-item">
@@ -135,12 +135,14 @@
     </div>
     </div>
     <script>
-      $(function(){
-        $('#se').click(function(){
-          $('#seis').show();
-          return false;
-        });
-      });
+      function toggle() {
+        var x = document.getElementById("seis");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
         </script>
     </div>
   <!-- 
