@@ -24,10 +24,10 @@
 <a class="navbar-item" id="se" onclick="toggle()">
   Seismic Data
 </a>
-<a class="navbar-item">
+<a class="navbar-item" id="wel" onclick="well()">
   Well Data
 </a>
-<a class="navbar-item">
+<a class="navbar-item" id="G" onclick="report()">
   G&G Report
 </a>
     <button class="button navbar-burger">
@@ -45,19 +45,21 @@
       <div class="wrap">
                  <div class="select-editable">
                   <select onchange="this.nextElementSibling.value=this.value">  
-                    <option value=""></option>
+                    <option value=""</option>
+                    <option value="Others">Others</option>
                     <option value="Petrol">Petrol</option>
                     <option value="Landmark">Landmark</option>
                     <option value="Geology">Geology</option>
                     <option value="Kingdom">Kingdom</option>
                   </select>
-                    <input type="text" name="format" value="" placeholder="Software"/>
+                    <input type="text" name="format" value="" placeholder="Software" disabled/>
                   </div>
                 </div>
                 <div class="wrap">
                 <div class="select-editable">
-                <select onchange="this.nextElementSibling.value=this.value">  
-                <option value=""></option>
+                <select onchange="this.nextElementSibling.value=this.value">
+                <option value=""</option>  
+                <option value="Others">Others</option>
         <option value="Ganga">Ganga</option>
         <option value="HF">HF</option>
         <option value="Rajasthan">Rajasthan</option>
@@ -66,8 +68,8 @@
         <option value="Vindhyan">Vindhyan</option>
         <option value="Vindhyan-Chambal">Vindhyan-Chambal</option>
         <option value="Vindhyan-Son">Vindhyan-Son</option>
-                </select>
-                    <input type="text" name="format" value="" placeholder="Block" />
+        </select>
+              <input type="text" name="format" value="" placeholder="Block"  disabled/>
                 </div>
                 </div>
 <div class="wrap">
@@ -75,20 +77,22 @@
 <div class="select-editable">
     <select onchange="this.nextElementSibling.value=this.value">
         <option value=""></option>
+        <option value="Others" id="vol">Others</option>
     <option value="2D">2D</option>
     <option value="3D">3D</option>
   </select>
-    <input type="text" name="format" value="" placeholder="Volume"/>
+    <input type="text" name="format" value="" id="v" placeholder="Volume" onclick="vol()"/>
  </div>
  <label class="container">Area
   <input type="checkbox" checked="checked">
-  <span class="checkmark"></span>
+  <span class="ark"></span>
 </label>
     </div>
     </div>
     <div class="select-editable">
     <select onchange="this.nextElementSibling.value=this.value">
-        <option value=""></option>
+    <option value=""></option>
+    <option value="Others">Others</option>
     <option value="SEGY">SEGY</option>
     <option value="PDF">PDF</option>
     <option value="ASCII">ASCII</option>
@@ -105,11 +109,12 @@
     <option value="WORD">WORD</option>
     <option value="WORD,XLS">WORD,XLS</option>
     </select>
-    <input type="text" name="format" value="" placeholder="Data Format"/>
+    <input type="text" name="format" value="" placeholder="Data Format" disabled/>
     </div>
    <div class="select-editable">
     <select onchange="this.nextElementSibling.value=this.value">
-        <option value=""></option>
+      <option value=" "></option>
+        <option value="Others">Others</option>
         <option value="Data Sheet">Data Sheet</option>
         <option value="Geometry">Geometry</option>
         <option value="Processed">Processed</option>
@@ -118,7 +123,7 @@
         <option value="SPS">SPS</option>
         <option value="Velocity">Velocity</option>
         </select>
-        <input type="text" name="format" value=""placeholder="Data Category Set"/>
+        <input type="text" name="format" value=""placeholder="Data Category Set" disabled/>
         </div>  
       <label class="container">SIG
       <input type="checkbox" checked="checked">
@@ -137,18 +142,24 @@
     function toggle(){
       var x=document.getElementById("seis");
               if (x.style.display === "none") {
-            x.style.display = "block";
+                x.style.display = "block";
+                document.getElementById('welldata').style.display=="none";
         } else {
             x.style.display = "none";
         }
     }
-
-
-        </script>
+   </script>
+   <script>
+       function vol(){
+        if(document.getElementById("vol").value==="Others")){
+            document.getElementById("v").disabled=true;
+        }
+      }
+</script>
     </div>
   <!--------------WELL DATA------------>
   
-<div id="well"> 
+<div id="welldata"> 
 <div class="card" style="width:20rem;">
 <div class="card-body" style="background-color:#c12c1c1;">
     <h3 class="card-title">Well Data</h3>
@@ -162,7 +173,8 @@
         <option value="Geology">Geology</option>
         <option value="Kingdom">Kingdom</option>
     </select>
-    <input type="text" name="format" value="" placeholder="Software" />
+    <input type="text" name="format" value="" placeholder="Software"
+    disabled />
     </div>
                 <div class="select-editable">
                 <select onchange="this.nextElementSibling.value=this.value">  
@@ -176,29 +188,29 @@
         <option value="Vindhyan-Chambal">Vindhyan-Chambal</option>
         <option value="Vindhyan-Son">Vindhyan-Son</option>
                 </select>
-                    <input type="text" name="format" value="" placeholder="Block" />
+                    <input type="text" name="format" value="" placeholder="Block" disabled />
                 </div>
 
           <div class="select-editable">
                 <select onchange="this.nextElementSibling.value=this.value">
         <option value=""></option>
          </select>
-        <input type="text" name="format" value=""placeholder="Well Name"/><br>
+        <input type="text" name="format" value=""placeholder="Well Name" disabled/><br>
       <div class="select-editable">
       <select onchange="this.nextElementSibling.value=this.value">
       <option value=""></option>
       <option value="VSP">VSP</option>
       <option value="Well-log">Well-log</option>
       </select>
-       <input type="text" name="format" value="" placeholder="Data Category">
-       </div><br>
+       <input type="text" name="format" value="" placeholder="Data Category" disabled>
+       </div>
            <div class="select-editable">
     <select onchange="this.nextElementSibling.value=this.value">
   <option value=""></option>
   <option value="LAS">LAS</option>
   <option value="PDF">PDF</option>
   </select>
-  <input type="text" name="format" value="" placeholder="Data Format"/></div><br>
+  <input type="text" name="format" value="" placeholder="Data Format" disabled/></div>
 <div class="select-editable">
     <select onchange="this.nextElementSibling.value=this.value">
         <option value=""></option>
@@ -207,36 +219,67 @@
       <option value="Original">Original</option>
       <option value="Raw">Raw</option>
     </select>
-    <input type="text" name="format" value=""placeholder="Data Type" />
-    </div><br>
+    <input type="text" name="format" value=""placeholder="Data Type" disabled/>
+    </div>
       <div class="control">
   <button class="button is-primary">Submit</button>
 </div>
 
 </div>
 </div>
+<script>
+function well(){
+      var y=document.getElementById("welldata");
+              if (y.style.display === "none") {
+            y.style.display = "block";
+            document.getElementById('seis').style.display="none";
+            // x.style.display="none";
+            z.style.display="none";
+        } else {
+            y.style.display = "none";
+            x.style.display="none";
+            z.style.display="none";
+        }
+    }
+</script>
 </div>
                     <!--G&G REPORT-->
 
-
-<!-- <div class="card" style="width:20rem;">
-<div class="card-body" style="background-color:#c3f2f1;">
-    <h3 class="card-title">G&G Report</h3>
+<div id="greport">
+<div class="card" style="width:20rem;">
+<div class="card-body" style="background-color:#f2f2c2;">
+  <h3 class="card-title">G&G Report</h3>
     <p class="card-text"></p>
 <div class="select-editable">
 <select onchange="this.nextElementSibling.value=this.value">
   <option value=""></option>
   </select>
-  <input type="text" name="format" value="" placeholder="SIG/Well" >
+  <input type="text" name="format" value="" placeholder="SIG/Well" disabled>
 </div>
 <div class="select-editable">
 <select onchange="this.nextElementSibling.value=this.value">
   <option value=""></option>
   </select>
-  <input type="text" name="format" value="" placeholder="Report Type"/>
+  <input type="text" name="format" value="" placeholder="Report Type" disabled/>
 </div>
       <div class="control">
   <button class="button is-primary">Submit</button>
-</div> -->
- --></body>
+    </div>
+</div>
+</div>
+<script>
+  function report(){
+      var z=document.getElementById("greport");
+              if (z.style.display === "none") {
+            z.style.display = "block";
+            document.getElementById('seis').style.display="none";
+            y.style.display="none";
+        } else {
+            z.style.display = "none";
+        }
+    }
+
+  </script>
+  </div>
+ </body>
 </html>
