@@ -1,140 +1,147 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-*, *:before, *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+body {margin:0;}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
 }
 
-html {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 20%;
-  background: #333;
-  -webkit-font-smoothing: antialiased;
-}
-
-#page-wrapper {
-  width: 620px;
-  background: #FFFFFF;
-  padding: 1em;
-  margin: 1em auto;
-  border-top: 5px solid #69c773;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.8);
-}
-
-
-label {
+.topnav a {
+  float: left;
   display: block;
-  margin-top: 2em;
-  margin-bottom: 0.5em;
-  color: #999999;
-}
-
-input {
-  width: 12%;
-  padding: 0.5em 0.5em;
-  font-size: 1.2em;
-  border-radius: 1px;
-  border: 1px solid #D9D9D9;
-}
-
-button {
-  display: inline-block;
-  border-radius: 3px;
-  border: none;
-  font-size: 0.9rem;
-  padding: 0.5rem 0.8em;
-  background: #69c773;
-  border-bottom: 1px solid #498b50;
-  color: white;
-  -webkit-font-smoothing: antialiased;
-  font-weight: bold;
-  margin: 0;
-  width: 25%;
+  color: #f2f2f2;
   text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
-button:hover, button:focus {
-  opacity: 0.75;
-  cursor: pointer;
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
 }
 
-button:active {
-  opacity: 1;
-  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.1) inset;
+.active {
+  background-color: #4CAF50;
+  color: white;
 }
 
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+}
 </style>
 </head>
 <body>
+
+<div class="topnav" id="myTopnav">
+
+  <a href="#"<img src="ongc_logo.png"></a>
+  <a href="#Seismic Data" class="active">Seismic Data</a>
+  <a href="#Well Data">Well Data</a>
+  <a href="#G&G Report">G&G Report</a>
+  <>
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+
 <script>
-var dataList = document.getElementById('json-datalist');
-var input = document.getElementById('ajax');
-
-// Create a new XMLHttpRequest.
-var request = new XMLHttpRequest();
-
-// Handle state changes for the request.
-request.onreadystatechange = function(response) {
-  if (request.readyState === 4) {
-    if (request.status === 200) {
-      // Parse the JSON
-      var jsonOptions = JSON.parse(request.responseText);
-  
-      // Loop over the JSON array.
-      jsonOptions.forEach(function(item) {
-        // Create a new <option> element.
-        var option = document.createElement('option');
-        // Set the value using the item in the JSON array.
-        option.value = item;
-        // Add the <option> element to the <datalist>.
-        dataList.appendChild(option);
-      });
-      
-      // Update the placeholder text.
-      input.placeholder = "e.g. datalist";
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
     } else {
-      // An error occured :(
-      input.placeholder = "Couldn't load datalist options :(";
+        x.className = "topnav";
     }
-  }
-};
-
-// Update the placeholder text.
-input.placeholder = "Loading options...";
-
-// Set up and make the request.
-request.open('GET', 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/4621/html-elements.json', true);
-request.send();
+}
 </script>
+<div style="position:relative;width:200px;height:25px;border:0;padding:0;margin:0;">
+<select style="position:absolute;top:0px;left:0px;width:200px; height:25px;line-height:20px;margin:0;padding:0;" onchange="document.getElementById('displayValue').value=this.options[this.selectedIndex].text; document.getElementById('idValue').value=this.options[this.selectedIndex].value;">
+   <option></option>
+   <option value="Petrol">Petrol</option>
+   <option value="Landmark">Landmark</option>
+   <option value="Geology">Geology</option>
+   <option value="Kingdom">Kingdom</option>
+</select>
 
-  <input type="text" id="default" list="languages" placeholder="datalist">
-  
-  <datalist id="software">
-    <option value="Petrol">
-    <option value="Landmark">
-    <option value="Geology">
-    <option value="Kingdom">
-     </datalist>
-     <input type="text" id="default" list="languages" placeholder="Software">
-<input type="text" id="default" list="languages" placeholder="Software">
-  
-  <datalist id="Block">
-  <option value="Ganga">
-  <option value="HF">
-  <option value="Rajasthan">
-  <option value="Satpura">
-  <option value="South-Rewa">
-  <option value="Vindhyan">
-  <option value="Vindhyan-Chambal">
-  <option value="Vindhyan-Son">
-  </datalist>
-  
- <!--  <label for="ajax">Pick an HTML Element (options loaded using AJAX)</label>
-  <input type="text" id="ajax" list="json-datalist" placeholder="e.g. datalist">
-  <datalist id="json-datalist"></datalist>
- --></div>
+  <input name="displayValue" placeholder="Block" style="position:absolute;top:0px;left:0px;width:183px;width:180px\9;#width:180px;height:21px; height:28px\9;#height:18px;border:1px solid #A9A9A9;" onfocus="this.select()" type="text">
+<input name="idValue" id="idValue" >
+</div>
+<!-- <div style="position:relative;width:200px;height:25px;border:0;padding:0;margin:0;">
+<select style="position:absolute;top:0px;left:0px;width:200px; height:25px;line-height:20px;margin:0;padding:0;" onchange="document.getElementById('displayValue').value=this.options[this.selectedIndex].text; document.getElementById('idValue').value=this.options[this.selectedIndex].value;">
+   <option></option>
+   <option></option>
+   <option value="Ganga">Ganga</option>
+   <option value="HF">HF</option>
+   <option value="Rajasthan">Rajasthan</option>
+   <option value="Satpura">Satpura</option>
+   <option value="South-Rewa">South-Rewa</option>
+   <option value="Vindhyan">Vindhyan</option>
+   <option value="Vindhyan-Chambal">Vindhyan-Chambal</option>
+   <option value="Vindhyan-Son">Vindhyan-Son</option>
+</select>
+
+  <input name="displayValue" placeholder="Software" style="position:absolute;top:0px;left:0px;width:183px;width:180px\9;#width:180px;height:21px; height:28px\9;#height:18px;border:1px solid #A9A9A9;" onfocus="this.select()" type="text">
+<input name="idValue" id="idValue" type="hidden">
+</div>
+<div style="position:relative;width:200px;height:25px;border:0;padding:0;margin:0;">
+<select style="position:absolute;top:0px;left:0px;width:200px; height:25px;line-height:20px;margin:0;padding:0;" onchange="document.getElementById('displayValue').value=this.options[this.selectedIndex].text; document.getElementById('idValue').value=this.options[this.selectedIndex].value;">
+   <option></option>
+   <option value="Petrol">2D</option>
+   <option value="Landmark">3D</optio
+</select>
+
+  <input name="displayValue" placeholder="Volume" style="position:absolute;top:0px;left:0px;width:183px;width:180px\9;#width:180px;height:21px; height:28px\9;#height:18px;border:1px solid #A9A9A9;" onfocus="this.select()" type="text">
+<input name="idValue" id="idValue" type="hidden">
+</div>
+<label class="container">Area
+  <input type="checkbox" checked="checked">
+  <span class="ark"></span>
+</label>
+<div style="position:relative;width:200px;height:25px;border:0;padding:0;margin:0;">
+<select style="position:absolute;top:0px;left:0px;width:200px; height:25px;line-height:20px;margin:0;padding:0;" onchange="document.getElementById('displayValue').value=this.options[this.selectedIndex].text; document.getElementById('idValue').value=this.options[this.selectedIndex].value;">
+   <option></option>
+   <option value="ASCII">ASCII</option>
+   <option value="DAT">DAT</option>
+   <option value="DOC">DOC</option>
+   <option value="ESSO">ESSO</option>
+   <option value="PDF">SEGD</option>
+   <option value="SEGY">SEGY</option>
+   <option value="SPS">SPS</option>
+   <option value="TEXT">TEXT</option>
+</select>
+
+  <input name="displayValue" placeholder="Data Format" style="position:absolute;top:0px;left:0px;width:183px;width:180px\9;#width:180px;height:21px; height:28px\9;#height:18px;border:1px solid #A9A9A9;" onfocus="this.select()" type="text">
+<input name="idValue" id="idValue" type="hidden">
+</div>
+ --> 
+
+
 </body>
-<>
+</html>

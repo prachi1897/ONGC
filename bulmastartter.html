@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-  
-  </style>
+    <style>
+    body{
+      background-color:F3E5AB;
+    }
+    </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Selection</title>
@@ -38,93 +41,107 @@
   </div>
 </nav>
 <div id="seis">
-<div class="card" style="width:20rem;">
+ <div class="card" style="width:20rem;">
 <div class="card-body" style="background-color:#f2f2c1;">
-    <h3 class="card-title">Seismic Data</h3>
+    
+  <h3 class="card-title">Seismic Data</h3>
     <p class="card-text"></p>
-      <div class="wrap">
+       <div class="wrap">
                  <div class="select-editable">
-                  <select onchange="this.nextElementSibling.value=this.value">  
-                    <option value=""</option>
-                    <option value="Others">Others</option>
-                    <option value="Petrol">Petrol</option>
-                    <option value="Landmark">Landmark</option>
-                    <option value="Geology">Geology</option>
-                    <option value="Kingdom">Kingdom</option>
-                  </select>
-                    <input type="text" name="format" value="" placeholder="Software" disabled/>
-                  </div>
+                 <div style="position:relative;width:200px;height:25px;border:0;padding:0;margin:0;">
+<select style="position:absolute;top:0px;left:0px;width:200px; height:25px;line-height:20px;margin:0;padding:0;" onchange="document.getElementById('displayValue').value=this.options[this.selectedIndex].text; document.getElementById('idValue').value=this.options[this.selectedIndex].value;">
+   <option></option>
+   <option value="Petrol">Petrol</option>
+   <option value="Landmark">Landmark</option>
+   <option value="Geology">Geology</option>
+   <option value="Kingdom">Kingdom</option>
+</select>
+<input name="displayValue" placeholder="Software" style="position:absolute;top:0px;left:0px;width:183px;width:180px\9;#width:180px;height:21px; height:28px\9;#height:18px;border:1px solid #A9A9A9;"  type="text">
+<input name="idValue" id="idValue" type="hidden">
+</div>
                 </div>
                 <div class="wrap">
                 <div class="select-editable">
-                <select onchange="this.nextElementSibling.value=this.value">
-                <option value=""</option>  
-                <option value="Others">Others</option>
-        <option value="Ganga">Ganga</option>
-        <option value="HF">HF</option>
-        <option value="Rajasthan">Rajasthan</option>
-        <option value="Satpura">Satpura</option>
-        <option value="South-Rewa">South-Rewa</option>
-        <option value="Vindhyan">Vindhyan</option>
-        <option value="Vindhyan-Chambal">Vindhyan-Chambal</option>
-        <option value="Vindhyan-Son">Vindhyan-Son</option>
-        </select>
-              <input type="text" name="format" value="" placeholder="Block"  disabled/>
-                </div>
-                </div>
+         <div style="position:relative;width:200px;height:25px;border:0;padding:0;margin:0;">
+<select style="position:absolute;top:0px;left:0px;width:200px; height:25px;line-height:20px;margin:0;padding:0;" onchange="document.getElementById('displayValue').value=this.options[this.selectedIndex].text; document.getElementById('idValue').value=this.options[this.selectedIndex].value;">
+   <option></option>
+   <option value="Ganga">Ganga</option>
+   <option value="HF">HF</option>
+   <option value="Rajasthan">Rajasthan</option>
+   <option value="Satpura">Satpura</option>
+   <option value="South-Rewa">South-Rewa</option>
+   <option value="Vindhyan">Vindhyan</option>
+   <option value="Vindhyan-Chambal">Vindhyan-Chambal</option>
+   <option value="Vindhyan-Son">Vindhyan-Son</option>
+</select>
+<input name="displayValue" placeholder="Block" style="position:absolute;top:0px;left:0px;width:183px;width:180px\9;#width:180px;height:21px; height:28px\9;#height:18px;border:1px solid #A9A9A9;" onfocus="this.select()" type="text">
+<input name="idValue" id="idValue" type="hidden">
+</div>       </div>
 <div class="wrap">
   <div class="left">
-<div class="select-editable">
-    <select onchange="this.nextElementSibling.value=this.value">
-        <option value=""></option>
-        <option value="Others" id="vol">Others</option>
-    <option value="2D">2D</option>
-    <option value="3D">3D</option>
-  </select>
-    <input type="text" name="format" value="" id="v" placeholder="Volume" onclick="vol()"/>
- </div>
+<div style="position:relative;width:200px;height:25px;border:0;padding:0;margin:0;">
+<select style="position:absolute;top:0px;left:0px;width:200px; height:25px;line-height:20px;margin:0;padding:0;" onchange="document.getElementById('displayValue').value=this.options[this.selectedIndex].text; document.getElementById('idValue').value=this.options[this.selectedIndex].value;">
+   <option></option>
+   <option value="2D">2D</option>
+   <option value="3D">3D</option>
+   </select>
+<input name="displayValue" placeholder="Volume" style="position:absolute;top:0px;left:0px;width:183px;width:180px\9;#width:180px;height:21px; height:28px\9;#height:18px;border:1px solid #A9A9A9;" onfocus="this.select()" type="text">
+<input name="idValue" id="idValue" type="hidden">
+</div>  </select>
+    </div>
  <label class="container">Area
   <input type="checkbox" checked="checked">
   <span class="ark"></span>
 </label>
     </div>
     </div>
+
     <div class="select-editable">
-    <select onchange="this.nextElementSibling.value=this.value">
-    <option value=""></option>
-    <option value="Others">Others</option>
-    <option value="SEGY">SEGY</option>
-    <option value="PDF">PDF</option>
-    <option value="ASCII">ASCII</option>
-    <option value="DAT">DAT</option>
-    <option value="DOC">DOC</option>
-    <option value="ESSO">ESSO</option>
-    <option value="SPS">SPS</option>
-    <option value="SEGD">SEGD</option>
-    <option value="TEXT">TEXT</option>
-    <option value="TIF">TIF</option>
-    <option value="TIFF">TIFF</option>
-    <option value="TIFF,PDF">TIFF,PDF</option>
-    <option value="VEL">VEL</option>
-    <option value="WORD">WORD</option>
-    <option value="WORD,XLS">WORD,XLS</option>
-    </select>
-    <input type="text" name="format" value="" placeholder="Data Format" disabled/>
-    </div>
+    <div style="position:relative;width:200px;height:25px;border:0;padding:0;margin:0;">
+<select style="position:absolute;top:0px;left:0px;width:200px; height:25px;line-height:20px;margin:0;padding:0;" onchange="document.getElementById('displayValue').value=this.options[this.selectedIndex].text; document.getElementById('idValue').value=this.options[this.selectedIndex].value;">
+   <option></option>
+   <option value="TIF">TIF</option>
+   <option value="TIFF">TIFF</option>
+   <option value="TIFF,PDF">TIFF,PDF</option>
+   <option value="VEL">VEL</option>
+   <option value="WORD">WORD</option>
+   <option value="WORD,XLS">WORD,XLS</option>
+</select>
+<input name="displayValue" placeholder="Data Category" style="position:absolute;top:0px;left:0px;width:183px;width:180px\9;#width:180px;height:21px; height:28px\9;#height:18px;border:1px solid #A9A9A9;" onfocus="this.select()" type="text">
+<input name="idValue" id="idValue" type="hidden">
+</div></div>
    <div class="select-editable">
-    <select onchange="this.nextElementSibling.value=this.value">
-      <option value=" "></option>
-        <option value="Others">Others</option>
-        <option value="Data Sheet">Data Sheet</option>
-        <option value="Geometry">Geometry</option>
-        <option value="Processed">Processed</option>
-        <option value="Gathers">Gathers</option>
-        <option value="Raw">Raw</option>
-        <option value="SPS">SPS</option>
-        <option value="Velocity">Velocity</option>
-        </select>
-        <input type="text" name="format" value=""placeholder="Data Category Set" disabled/>
-        </div>  
+   <div style="position:relative;width:200px;height:25px;border:0;padding:0;margin:0;">
+<select style="position:absolute;top:0px;left:0px;width:200px; height:25px;line-height:20px;margin:0;padding:0;" onchange="document.getElementById('displayValue').value=this.options[this.selectedIndex].text; document.getElementById('idValue').value=this.options[this.selectedIndex].value;">
+   <option></option>
+   <option value="ASCII">ASCII</option>
+   <option value="DAT">DAT</option>
+   <option value="DOC">DOC</option>
+   <option value="ESSO">ESSO</option>
+   <option value="PDF">SEGD</option>
+   <option value="SEGY">SEGY</option>
+   <option value="SPS">SPS</option>
+   <option value="TEXT">TEXT</option>
+</select>
+
+<input name="displayValue" placeholder="Data Format" style="position:absolute;top:0px;left:0px;width:183px;width:180px\9;#width:180px;height:21px; height:28px\9;#height:18px;border:1px solid #A9A9A9;" onfocus="this.select()" type="text">
+<input name="idValue" id="idValue" type="hidden">
+</div>    
+<div style="position:relative;width:200px;height:25px;border:0;padding:0;margin:0;">
+<select style="position:absolute;top:0px;left:0px;width:200px; height:25px;line-height:20px;margin:0;padding:0;" onchange="document.getElementById('displayValue').value=this.options[this.selectedIndex].text; document.getElementById('idValue').value=this.options[this.selectedIndex].value;">
+   <option></option>
+   <option value="Data Sheet">Data Sheet</option>
+   <option value="Geometry">Geometry</option>
+   <option value="Processed">Processed</option>
+   <option value="Gathers">Gathers</option>
+   <option value="Raw">Raw</option>
+   <option value="SPS">SPS</option>
+   <option value="Velocity">Velocity</option>
+</select>
+<input name="displayValue" placeholder="Data Category Set" style="position:absolute;top:0px;left:0px;width:183px;width:180px\9;#width:180px;height:21px; height:28px\9;#height:18px;border:1px solid #A9A9A9;" onfocus="this.select()" type="text">
+<input name="idValue" id="idValue" type="hidden">
+</div>
+ </div>  
       <label class="container">SIG
       <input type="checkbox" checked="checked">
       <span class="checkmark"></span>
@@ -133,29 +150,21 @@
       <input type="checkbox" checked="checked">
       <span class="checkmark"></span>
       </label>
-    <div class="control">
-    <button class="button is-primary">Submit</button>
+      <div class="control">
+ <button class="button is-primary">Submit</button>
     </div>
     </div>
-    </div>
+    
     <script>
     function toggle(){
       var x=document.getElementById("seis");
               if (x.style.display === "none") {
                 x.style.display = "block";
-                document.getElementById('welldata').style.display=="none";
-        } else {
+                 } else {
             x.style.display = "none";
         }
     }
    </script>
-   <script>
-       function vol(){
-        if(document.getElementById("vol").value==="Others")){
-            document.getElementById("v").disabled=true;
-        }
-      }
-</script>
     </div>
   <!--------------WELL DATA------------>
   
@@ -164,63 +173,58 @@
 <div class="card-body" style="background-color:#c12c1c1;">
     <h3 class="card-title">Well Data</h3>
     <p class="card-text"></p>
-     <div class="wrap">       
+                <div class="wrap">
                 <div class="select-editable">
-                <select onchange="this.nextElementSibling.value=this.value">
-        <option value=""></option>
-        <option value="Petrol">Petrol</option>
-        <option value="Landmark">Landmark</option>
-        <option value="Geology">Geology</option>
-        <option value="Kingdom">Kingdom</option>
-    </select>
-    <input type="text" name="format" value="" placeholder="Software"
-    disabled />
-    </div>
-                <div class="select-editable">
-                <select onchange="this.nextElementSibling.value=this.value">  
-                <option value=""></option>
-        <option value="Ganga">Ganga</option>
-        <option value="HF">HF</option>
-        <option value="Rajasthan">Rajasthan</option>
-        <option value="Satpura">Satpura</option>
-        <option value="South-Rewa">South-Rewa</option>
-        <option value="Vindhyan">Vindhyan</option>
-        <option value="Vindhyan-Chambal">Vindhyan-Chambal</option>
-        <option value="Vindhyan-Son">Vindhyan-Son</option>
-                </select>
-                    <input type="text" name="format" value="" placeholder="Block" disabled />
-                </div>
+         <div style="position:relative;width:200px;height:25px;border:0;padding:0;margin:0;">
+<select style="position:absolute;top:0px;left:0px;width:200px; height:25px;line-height:20px;margin:0;padding:0;" onchange="document.getElementById('displayValue').value=this.options[this.selectedIndex].text; document.getElementById('idValue').value=this.options[this.selectedIndex].value;">
+   <option></option>
+   <option value="Ganga">Ganga</option>
+   <option value="HF">HF</option>
+   <option value="Rajasthan">Rajasthan</option>
+   <option value="Satpura">Satpura</option>
+   <option value="South-Rewa">South-Rewa</option>
+   <option value="Vindhyan">Vindhyan</option>
+   <option value="Vindhyan-Chambal">Vindhyan-Chambal</option>
+   <option value="Vindhyan-Son">Vindhyan-Son</option>
+</select>
+<input name="displayValue" placeholder="Block" style="position:absolute;top:0px;left:0px;width:183px;width:180px\9;#width:180px;height:21px; height:28px\9;#height:18px;border:1px solid #A9A9A9;" onfocus="this.select()" type="text">
+<input name="idValue" id="idValue" type="hidden">
+</div>       </div>
 
-          <div class="select-editable">
-                <select onchange="this.nextElementSibling.value=this.value">
-        <option value=""></option>
-         </select>
-        <input type="text" name="format" value=""placeholder="Well Name" disabled/><br>
-      <div class="select-editable">
-      <select onchange="this.nextElementSibling.value=this.value">
-      <option value=""></option>
-      <option value="VSP">VSP</option>
-      <option value="Well-log">Well-log</option>
-      </select>
-       <input type="text" name="format" value="" placeholder="Data Category" disabled>
-       </div>
-           <div class="select-editable">
-    <select onchange="this.nextElementSibling.value=this.value">
-  <option value=""></option>
-  <option value="LAS">LAS</option>
-  <option value="PDF">PDF</option>
-  </select>
-  <input type="text" name="format" value="" placeholder="Data Format" disabled/></div>
-<div class="select-editable">
-    <select onchange="this.nextElementSibling.value=this.value">
-        <option value=""></option>
-      <option value="Composite-Log">Composite-Log</option>
-      <option value="Merged-Log">Merged-Log</option>
-      <option value="Original">Original</option>
-      <option value="Raw">Raw</option>
-    </select>
-    <input type="text" name="format" value=""placeholder="Data Type" disabled/>
-    </div>
+  
+                <div class="wrap">
+                <div class="select-editable">
+         <div style="position:relative;width:200px;height:25px;border:0;padding:0;margin:0;">
+<select style="position:absolute;top:0px;left:0px;width:200px; height:25px;line-height:20px;margin:0;padding:0;" onchange="document.getElementById('displayValue').value=this.options[this.selectedIndex].text; document.getElementById('idValue').value=this.options[this.selectedIndex].value;">
+   <option></option>
+   </select>
+<input name="displayValue" placeholder="Well Name" style="position:absolute;top:0px;left:0px;width:183px;width:180px\9;#width:180px;height:21px; height:28px\9;#height:18px;border:1px solid #A9A9A9;" onfocus="this.select()" type="text">
+<input name="idValue" id="idValue" type="hidden">
+</div>       </div>           
+              <div class="select-editable">
+         <div style="position:relative;width:200px;height:25px;border:0;padding:0;margin:0;">
+<select style="position:absolute;top:0px;left:0px;width:200px; height:25px;line-height:20px;margin:0;padding:0;" onchange="document.getElementById('displayValue').value=this.options[this.selectedIndex].text; document.getElementById('idValue').value=this.options[this.selectedIndex].value;">
+   <option></option>
+   <option value="LAS">LAS</option>
+   <option value="PDF">PDF</option>
+   </select>
+<input name="displayValue" placeholder="Data Format" style="position:absolute;top:0px;left:0px;width:183px;width:180px\9;#width:180px;height:21px; height:28px\9;#height:18px;border:1px solid #A9A9A9;" onfocus="this.select()" type="text">
+<input name="idValue" id="idValue" type="hidden">
+</div>       </div>           
+    <div class="wrap">
+                <div class="select-editable">
+         <div style="position:relative;width:150x;height:25px;border:0;padding:0;margin:0;">
+<select style="position:absolute;top:0px;left:0px;width:200px; height:25px;line-height:20px;margin:0;padding:0;" onchange="document.getElementById('displayValue').value=this.options[this.selectedIndex].text; document.getElementById('idValue').value=this.options[this.selectedIndex].value;">
+   <option></option>
+   <option value="Composite-Log">Composite Log</option>
+   <option value="Merged-Log">Merged-Log</option>
+   <option value="Original">Original</option>
+   <option value="Raw">Raw</option>
+   </select>
+<input name="displayValue" placeholder="Data Type" style="position:absolute;top:0px;left:0px;width:183px;width:180px\9;#width:180px;height:21px; height:28px\9;#height:18px;border:1px solid #A9A9A9;" onfocus="this.select()" type="text">
+<input name="idValue" id="idValue" type="hidden">
+</div>       </div>           
+              
       <div class="control">
   <button class="button is-primary">Submit</button>
 </div>
@@ -231,15 +235,10 @@
 function well(){
       var y=document.getElementById("welldata");
               if (y.style.display === "none") {
-            y.style.display = "block";
-            document.getElementById('seis').style.display="none";
-            // x.style.display="none";
-            z.style.display="none";
-        } else {
+                y.style.display="block";
+           } else {
             y.style.display = "none";
-            x.style.display="none";
-            z.style.display="none";
-        }
+            }
     }
 </script>
 </div>
@@ -251,17 +250,29 @@ function well(){
   <h3 class="card-title">G&G Report</h3>
     <p class="card-text"></p>
 <div class="select-editable">
-<select onchange="this.nextElementSibling.value=this.value">
-  <option value=""></option>
-  </select>
-  <input type="text" name="format" value="" placeholder="SIG/Well" disabled>
+<div style="position:relative;width:200px;height:25px;border:0;padding:0;margin:0;">
+<select style="position:absolute;top:0px;left:0px;width:200px; height:25px;line-height:20px;margin:0;padding:0;" onchange="document.getElementById('displayValue').value=this.options[this.selectedIndex].text; document.getElementById('idValue').value=this.options[this.selectedIndex].value;">
+   <option></option>
+   
+</select>
+<input name="displayValue" placeholder="SIG/WELL" style="position:absolute;top:0px;left:0px;width:183px;width:180px\9;#width:180px;height:21px; height:28px\9;#height:18px;border:1px solid #A9A9A9;" onfocus="this.select()" type="text">
+<input name="idValue" id="idValue" type="hidden">
 </div>
+ 
 <div class="select-editable">
-<select onchange="this.nextElementSibling.value=this.value">
-  <option value=""></option>
-  </select>
-  <input type="text" name="format" value="" placeholder="Report Type" disabled/>
+<div style="position:relative;width:200px;height:25px;border:0;padding:0;margin:0;">
+<select style="position:absolute;top:0px;left:0px;width:200px; height:25px;line-height:20px;margin:0;padding:0;" onchange="document.getElementById('displayValue').value=this.options[this.selectedIndex].text; document.getElementById('idValue').value=this.options[this.selectedIndex].value;">
+   <option></option>
+   <option value="Petrol">Petrol</option>
+   <option value="Landmark">Landmark</option>
+   <option value="Geology">Geology</option>
+   <option value="Kingdom">Kingdom</option>
+
+</select>
+<input name="displayValue" placeholder="Software" style="position:absolute;top:0px;left:0px;width:183px;width:180px\9;#width:180px;height:21px; height:28px\9;#height:18px;border:1px solid #A9A9A9;" onfocus="this.select()" type="text">
+<input name="idValue" id="idValue" type="hidden">
 </div>
+ 
       <div class="control">
   <button class="button is-primary">Submit</button>
     </div>

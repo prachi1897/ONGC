@@ -88,12 +88,11 @@ setInterval(GetClock,1000);
 		 session_start();
 		 $_SESSION['email']=$data['email'];
 		 $_SESSION['name']=$data['full_name'];
-		 echo"<script language=\"javascript\">alert(\"Welcome\");document.location.href="userselectionpage.php";</script>";
+		 echo"<script language=\"javascript\">alert(\"Welcome\");document.location.href=\"userselectionpage.php\"</script>";
 		}
 		else{
-			echo "<script language=\"javascript\">alert(\"Invalid username or password\");document.location.href="userlogin.php";</script>"
+			echo "<script language=\"javascript\">alert(\"Invalid username or password\");document.location.href=\"userlogin.php\";</script>";
 		}
 	}
 	?>
-		}
 			
